@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rent-a-fit', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/rent-a-fit', {
 });
 
 module.exports = mongoose.connection;

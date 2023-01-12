@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { BiUpload } from "react-icons/bi";
 import "./style.css";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { ADD_PHOTO, ADD_PRODUCT } from "../../utils/mutations";
 
 const AddPost = (props) => {
-  const navigate = useNavigate()
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
@@ -16,8 +15,6 @@ const AddPost = (props) => {
   const [addPhoto, { data, error }] = useMutation(ADD_PHOTO, {});
   console.log(data);
 
-
-
   const hadleFileInputChange = (e) => {
     const file = e.target.files[0];
     setFileName(file);
@@ -26,9 +23,8 @@ const AddPost = (props) => {
     reader.onloadend = () => {
       const photo = reader.result;
 
-        
-      console.log('long string', photo)
-      setImage(photo)
+      console.log("long string", photo);
+      setImage(photo);
       addPhoto({
         variables: { photo: photo },
       });
@@ -41,46 +37,33 @@ const AddPost = (props) => {
   );
 
   const handleFormSubmit = async (event) => {
-    
-    
-
-    try{
+    try {
       event.preventDefault();
-    console.log('Image ', image)
-    console.log(typeof price)
+      console.log("Image ", image);
+      console.log(typeof price);
       await addProduct({
         variables: {
           description: description,
           price: parseInt(price),
           name: name,
           image: image,
+          // * TODO: add a category
         },
-      })
-      window.location.assign('/');
-    }catch(e){
-      console.error(e)
-  }
-
+      });
+      window.location.assign("/");
+    } catch (e) {
+      console.error(e.message);
+    }
   };
 
   useEffect(() => {
-    //data is the cloudinary url to image
-    // if (data) {
-    //   // data.upload photo is this = http://res.cloudinary.com/rentafit/image/upload/v1…6113117/your_folder_name/giiecpbguzyuv5bpcggc.jpg'
-    //   setImage(data.uploadPhoto);
-    // }
-
-
-      console.log('this is the usetstate variable' , image)
+    console.log("this is the usetstate variable", image);
     //this wont run until productData exists
     if (productData) {
       //reroutes to the home page
       props.history.push("/home");
     }
   }, [data, productData]);
-
-
- 
 
   return (
     <div className="post_container">
@@ -126,11 +109,11 @@ const AddPost = (props) => {
           </label>
 
           {/* image comes from the usestate variable image, setImage*/}
-         {image &&
-          <div className="img-output-container">
-          { image && <img alt="output" src={image} /> } 
-          </div>
-         } 
+          {image && (
+            <div className="img-output-container">
+              {image && <img alt="output" src={image} />}
+            </div>
+          )}
 
           <h3>Description</h3>
           <textarea

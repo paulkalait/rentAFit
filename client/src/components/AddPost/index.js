@@ -39,8 +39,6 @@ const AddPost = (props) => {
   const handleFormSubmit = async (event) => {
     try {
       event.preventDefault();
-      console.log("Image ", image);
-      console.log(typeof price);
       await addProduct({
         variables: {
           description: description,
@@ -61,7 +59,7 @@ const AddPost = (props) => {
     //this wont run until productData exists
     if (productData) {
       //reroutes to the home page
-      props.history.push("/home");
+      props.history.push("/dashboard");
     }
   }, [data, productData]);
 

@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Detail from "./pages/Detail";
-import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import AddPost from './components/AddPost'
@@ -49,6 +49,7 @@ function App() {
             <Routes>
               <Route path='/addpost' element={<AddPost />} />
               <Route path="/profile/:username" element={<Profile />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

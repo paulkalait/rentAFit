@@ -22,6 +22,34 @@ const Home = () => {
                 <Animation  animationJSON={phoneAnimation} classStyle="animation" data-testid="animation"/> 
             </div>
        </section>
+       <section data-testid="center-container" className='center-container'>
+            <div className='process-container'>
+
+              <div>
+              <img alt="post-image"></img>
+                <h3>Share</h3>
+                <p>with others your woredrobe to be rented out</p>
+              </div>
+              <div>
+              <img alt="Earn-money"></img>
+              <h3>Earn</h3>
+              <p>income day by the day</p>
+              </div>
+              <div>
+                <img alt="review"></img>
+              <h3>Review</h3>
+              <p>other products and interact with people</p>
+              </div>
+
+            </div>
+       </section>
+
+       <section data-testid="center-container" className='center-container'>
+            <div className='testimonial-container'>
+
+
+            </div>
+       </section>
 
     </div>
   )

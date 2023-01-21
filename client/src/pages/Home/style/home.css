@@ -43,6 +43,7 @@
     width: 180px;
     background-color: white !important;
     border-radius: 90px;
+    color: black;
     border: 1px solid black;
     box-shadow: 5px 5px black;
     transition: box-shadow .2ms ease-in-out;

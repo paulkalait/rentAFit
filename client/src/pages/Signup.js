@@ -115,7 +115,7 @@ function Signup() {
         </div>
         <Link to="/login" className="already-a-user">
           Already a User?{" "}
-          <span className="login-or-sign-up-link">Login In</span>{" "}
+          <span className="login-or-sign-up-link">Login</span>{" "}
         </Link>
       </form>
       <div className="login-right">
